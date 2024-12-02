@@ -23,13 +23,12 @@ body {
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease; 
-    transform: scale(2.5); /* Scale up by 1.5x */
+    transform: scale(1.5); /* Scale up by 1.5x */
     transform-origin: center center;
 }
 
 .collage img:hover {
-    transform: scale(1.1);
+    transform: scale(1.8);
     z-index: 10;
-    opacity: 1;
     transition: transform 0.3s ease, z-index 0s 0.3s;
 }
