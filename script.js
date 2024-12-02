@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll('.collage img');
-    const maxOverlap = 40; // Maximum overlap allowed in pixels
+    const maxOverlap = 0; // Maximum overlap allowed in pixels
     const container = document.querySelector('.collage');
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
