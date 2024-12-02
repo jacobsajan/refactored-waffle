@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
 
-    // Helper function to check overlap
     function checkOverlap(img, top, left) {
         for (let otherImg of images) {
             if (otherImg === img) continue; // Skip self-comparison
@@ -25,8 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     images.forEach(img => {
         let positionSet = false;
+        let attempts = 0; // Counter to prevent infinite loop
+        const maxAttempts = 1000; // Limit for attempts
 
-        while (!positionSet) {
+        while (!positionSet && attempts < maxAttempts) {
+            attempts++;
+
             // Generate random positions within the container
             const randomTop = Math.random() * (containerHeight - img.offsetHeight);
             const randomLeft = Math.random() * (containerWidth - img.offsetWidth);
@@ -37,6 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 img.style.left = randomLeft + "px";
                 positionSet = true; // Valid position found
             }
+        }
+
+        // Log an error if no valid position was found
+        if (!positionSet) {
+            console.error("Could not position image after max attempts:", img);
         }
     });
 });
