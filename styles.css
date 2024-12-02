@@ -23,7 +23,6 @@ body {
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s ease; 
-    transform: scale(1.5); /* Scale up by 1.5x */
     transform-origin: center center;
 }
 
