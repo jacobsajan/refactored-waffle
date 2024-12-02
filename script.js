@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const verticalOverlap = Math.abs(top - otherTop) < img.offsetHeight - maxOverlap;
             const horizontalOverlap = Math.abs(left - otherLeft) < img.offsetWidth - maxOverlap;
 
-            if (verticalOverlap && horizontalOverlap) {
+            if (verticalOverlap || horizontalOverlap) {
                 return true; // Overlap detected
             }
         }
