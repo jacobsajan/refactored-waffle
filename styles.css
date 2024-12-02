@@ -22,8 +22,9 @@ body {
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-    transition: transform 0.3s ease;
-    opacity: 0.8;
+    transition: transform 0.3s ease; 
+    transform: scale(5); /* Scale up by 1.5x */
+    transform-origin: center center;
 }
 
 .collage img:hover {
