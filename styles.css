@@ -18,7 +18,7 @@ body {
 
 .collage img {
     position: absolute;
-    width: 100px; /* Set a fixed size for each image */
+    width: 200px; /* Set a fixed size for each image */
     height: auto;
     object-fit: cover;
     border-radius: 8px;
