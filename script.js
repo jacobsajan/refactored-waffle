@@ -1,50 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll('.collage img');
-    const maxOverlap = 500; // Set maximum overlap allowed in pixels
-    const container = document.querySelector('.collage');
-    const containerWidth = container.offsetWidth;
-    const containerHeight = container.offsetHeight;
+// Number of images in the folder and the folder path
+const imageFolder = "images/";
+const totalImages = 10; // Adjust this to match the number of images in the folder
 
-    function checkOverlap(img, top, left) {
-        for (let otherImg of images) {
-            if (otherImg === img) continue; // Skip self-comparison
+// Number of images to display in the grid
+const imagesToDisplay = 12; // Change as needed
 
-            const otherTop = parseFloat(otherImg.style.top) || 0;
-            const otherLeft = parseFloat(otherImg.style.left) || 0;
+// Generate an array of image filenames
+const imageFilenames = Array.from({ length: totalImages }, (_, i) => `image${i + 1}.jpg`);
 
-            const verticalDistance = Math.abs(top - otherTop);
-            const horizontalDistance = Math.abs(left - otherLeft);
-
-            const overlapsVertically = verticalDistance < img.offsetHeight - maxOverlap;
-            const overlapsHorizontally = horizontalDistance < img.offsetWidth - maxOverlap;
-
-            if (overlapsVertically && overlapsHorizontally) {
-                return true; // Overlap detected
-            }
-        }
-        return false; // No overlap
+// Shuffle the array randomly
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
+    return array;
+}
 
-    images.forEach(img => {
-        let positionSet = false;
-        let attempts = 0;
-        const maxAttempts = 1000; // Prevent infinite loop
+// Pick random images from the shuffled array
+const randomImages = shuffleArray(imageFilenames).slice(0, imagesToDisplay);
 
-        while (!positionSet && attempts < maxAttempts) {
-            attempts++;
-
-            const randomTop = Math.random() * (containerHeight - img.offsetHeight);
-            const randomLeft = Math.random() * (containerWidth - img.offsetWidth);
-
-            if (!checkOverlap(img, randomTop, randomLeft)) {
-                img.style.top = randomTop + "px";
-                img.style.left = randomLeft + "px";
-                positionSet = true;
-            }
-        }
-
-        if (!positionSet) {
-            console.error("Could not position image after max attempts:", img);
-        }
-    });
+// Add images to the grid
+const collage = document.querySelector(".collage");
+randomImages.forEach((filename) => {
+    const img = document.createElement("img");
+    img.src = `${imageFolder}${filename}`;
+    img.alt = filename;
+    collage.appendChild(img);
 });
