@@ -1,9 +1,9 @@
 // Number of images in the folder and the folder path
 const imageFolder = "images/";
-const totalImages = 10; // Adjust this to match the number of images in the folder
+const totalImages = 16; // Adjust this to match the number of images in the folder
 
 // Number of images to display in the grid
-const imagesToDisplay = 12; // Change as needed
+const imagesToDisplay = 16; // Change as needed
 
 // Generate an array of image filenames
 const imageFilenames = Array.from({ length: totalImages }, (_, i) => `image${i + 1}.jpg`);
