@@ -6,28 +6,27 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f5f5f5;
-    position: relative; /* Allow absolute positioning of images */
+    font-family: Arial, sans-serif;
 }
 
 .collage {
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px; /* Space between grid items */
     width: 90vw;
     max-width: 1200px;
-    height: 90vh; /* Make sure there's space to position images */
 }
 
 .collage img {
-    position: absolute;
-    width: 200px; /* Set a fixed size for each image */
+    width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: cover; /* Ensures images maintain their aspect ratio */
     border-radius: 8px;
-    transition: transform 0.3s ease; 
-    transform-origin: center center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .collage img:hover {
-    transform: scale(1.8);
-    z-index: 10;
-    transition: transform 0.3s ease, z-index 0s 0.3s;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
