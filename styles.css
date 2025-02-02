@@ -9,22 +9,23 @@ body {
 }
 
 .collage {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
-    grid-template-rows: repeat(4, auto); /* Fixed 4 rows */
-    gap: 10px; /* Space between grid items */
-    width: 80vw; /* Adjust as needed */
-    max-width: 800px; /* Set max width for the grid */
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  column-gap:           0px;  
 }
 
 .collage img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
 }
+
 
 .collage img:hover {
     transform: scale(1.05); /* Slight zoom effect on hover */
