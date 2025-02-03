@@ -13,11 +13,11 @@ body {
   line-height: 0;
    
   -webkit-column-count: 5;
-  -webkit-column-gap:   5px;
+  -webkit-column-gap:   50px;
   -moz-column-count:    5;
-  -moz-column-gap:      5px;
+  -moz-column-gap:      50px;
   column-count:         5;
-  column-gap:           5px;  
+  column-gap:           50px;  
 }
 
 .collage img {
