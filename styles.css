@@ -3,7 +3,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     min-height: 100vh;
     background-color: #f5f5f5;
     display: flex;
@@ -39,7 +39,7 @@ margin-bottom: 10px;
 .musicplayer {
     flex: 1;
     background-color: black;
-    min-height: 100%;
+    height: auto;
 }
 
 p {
