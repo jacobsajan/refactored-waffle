@@ -38,8 +38,7 @@ margin-bottom: 10px;
 .musicplayer {
     flex: 1;
     background-color: black;
-    min-height: 100vh;
-    height: 100%;
+    min-height: 100%;
 }
 
 p {
