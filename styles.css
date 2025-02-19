@@ -37,4 +37,5 @@ margin-bottom: 10px;
 
 .musicplayer {
     background-image: linear-gradient(to right, white, black);
+    height: 100vh;
 }
