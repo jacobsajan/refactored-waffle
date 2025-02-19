@@ -38,6 +38,8 @@ margin-bottom: 10px;
 .musicplayer {
     flex: 1;
     background-color: black;
+    margin-left: 10px;
+    align-items: center;
 }
 
 p {
