@@ -6,7 +6,6 @@ body {
     align-items: stretch;
     min-height: 100vh;
     background-color: #f5f5f5;
-    display: flex;
     font-family: Arial, sans-serif;
 }
 
@@ -39,7 +38,6 @@ margin-bottom: 10px;
 .musicplayer {
     flex: 1;
     background-color: black;
-    height: auto;
 }
 
 p {
