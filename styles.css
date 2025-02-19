@@ -36,6 +36,10 @@ margin-bottom: 10px;
 }
 
 .musicplayer {
-    background-image: linear-gradient(to right, white, black);
+    background-color: black;
     height: 100%;
+}
+
+p {
+    color: white;
 }
